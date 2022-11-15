@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:login_test/view/registration-form-screen.dart';
 
 import 'login_screen.dart';
 
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             const Text("Home Page", style: (TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),),
             ElevatedButton(
               onPressed: () {
-                Get.offAll(() => const LoginScreen());
+                Get.offAll(() => RegistrationFormScreen());
               },
               style: ElevatedButton.styleFrom(
                   elevation: 4,

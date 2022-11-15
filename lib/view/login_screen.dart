@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:login_test/view/registration-form-screen.dart';
 
 import 'home_screen.dart';
 
@@ -16,6 +17,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final baseUrl = "http://103.96.106.250:1065/";
 
   var userIdTxtController = TextEditingController();
@@ -42,6 +44,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "User ID",
                   labelText: "User ID",
                 ),
+                validator: (value){
+                  if(value!.isEmpty){
+                    return "empty";
+                  }
+                  else {
+                    return null;
+                  }
+                },
                 onSaved: (value){
 
                 },
@@ -92,12 +102,17 @@ class _LoginScreenState extends State<LoginScreen> {
           'password': passwordTxtController.text.toString()
         }));
 
-    print("response: ${response.statusCode}");
     if(response.statusCode == 200) {
-      Get.offAll(() => const HomeScreen());
+
+      if (!_formKey.currentState!.validate()) {
+        return;
+      }
+      // _formKey.currentState!.save();
+      Get.offAll(() => RegistrationFormScreen());
     }
     else {
-      throw const HttpException("ID or Password doesn't match");
+      print("response: ${response.statusCode}");
+      throw const HttpException("ERROR");
     }
   }
 
