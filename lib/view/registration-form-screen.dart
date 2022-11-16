@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../constants.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
 
@@ -12,13 +13,13 @@ class RegistrationFormScreen extends StatelessWidget {
       return;
     }
     // _formKey.currentState!.save();
-    Get.offAll(() => const HomeScreen());
+    Get.offAll(() => const HomeScreen(), transition: Transition.cupertinoDialog, duration: Duration(milliseconds: 500));
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(""), backgroundColor: Colors.white,),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -29,6 +30,7 @@ class RegistrationFormScreen extends StatelessWidget {
               children: [
                 const Text("User Registration",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo),),
+                const SizedBox(height: 8,),
                 Column(
                   children: [
                     Card(
@@ -41,232 +43,262 @@ class RegistrationFormScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextFormField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("User ID"),
                                   prefixIcon: Icon(Icons.credit_card),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                    borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                                 // validator: validatorEmptyCheck,
                               ),
-                              const SizedBox(height: 10,),
+                              SizedBox(height: heightBfields,),
                               TextFormField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("User Name"),
                                   prefixIcon: Icon(Icons.person),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10,),
+                              SizedBox(height: heightBfields,),
                               TextFormField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("User Email"),
                                   prefixIcon: Icon(Icons.mail),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                                 keyboardType: TextInputType.emailAddress,
                               ),
-                              const SizedBox(height: 10,),
+                              SizedBox(height: heightBfields,),
                               TextFormField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("User Mobile"),
                                   prefixIcon: Icon(Icons.call),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                                 keyboardType: TextInputType.number,
                               ),
-                              const SizedBox(height: 10,),
+                              SizedBox(height: heightBfields,),
                               TextFormField(
                                 obscureText: true,
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("Password"),
                                   prefixIcon: Icon(Icons.key),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10,),
+                              SizedBox(height: heightBfields,),
                               TextFormField(
                                 obscureText: true,
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   label: Text("Confirm Password"),
                                   prefixIcon: Icon(Icons.key),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   disabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.indigo,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         width: 2,
                                         color: Colors.red,
-                                      )
+                                      ),
+                                      borderRadius: BorderRadius.circular(borderRadius)
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 22,),
+                              SizedBox(height: heightBfields+10,),
                               SizedBox(
                                 width: double.infinity,
                                 child: ElevatedButton(
